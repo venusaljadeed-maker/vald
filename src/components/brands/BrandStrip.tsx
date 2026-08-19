@@ -4,30 +4,48 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 const BRANDS = [
-  "DEWALT", "BOSCH", "Makita", "STANLEY", "3M", "WURTH", "ESAB", "LINCOLN ELECTRIC"
+  { name: "DEWALT", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e4/DeWalt_Logo.svg" },
+  { name: "BOSCH", logo: "https://upload.wikimedia.org/wikipedia/commons/1/16/Bosch-logo.svg" },
+  { name: "Makita", logo: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Makita_logo.svg" },
+  { name: "STANLEY", logo: "https://upload.wikimedia.org/wikipedia/commons/4/43/Stanley_Tools_logo.svg" },
+  { name: "3M", logo: "https://upload.wikimedia.org/wikipedia/commons/1/15/3M_wordmark.svg" },
+  { name: "WURTH", logo: "https://upload.wikimedia.org/wikipedia/commons/3/30/W%C3%BCrth_logo.svg" },
+  { name: "ESAB", logo: "https://upload.wikimedia.org/wikipedia/commons/1/13/ESAB_logo.svg" },
+  { name: "LINCOLN ELECTRIC", logo: "https://upload.wikimedia.org/wikipedia/en/2/23/Lincoln_Electric_logo.svg" }
 ];
 
 export const BrandStrip = () => {
   return (
-    <section className="bg-[#0b1424] py-8 border-y border-vald-soft-grey/10 overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12">
-        <h3 className="text-[10px] font-semibold uppercase tracking-widest text-vald-text-grey mb-6">
+    <section className="bg-white py-12 border-y border-vald-soft-grey overflow-hidden relative">
+      <div className="container mx-auto px-6 lg:px-12 mb-8">
+        <h3 className="text-[10px] font-semibold uppercase tracking-widest text-vald-text-grey text-center md:text-left">
           TRUSTED BY INDUSTRY. CHOSEN BY PROFESSIONALS.
         </h3>
-        
-        <div className="flex items-center justify-between gap-8 md:gap-12 overflow-x-auto no-scrollbar pb-4">
-          {BRANDS.map((brand, index) => (
+      </div>
+      
+      {/* Marquee Container */}
+      <div className="relative w-full flex overflow-hidden">
+        <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+          {[...BRANDS, ...BRANDS, ...BRANDS, ...BRANDS].map((brand, index) => (
             <div 
               key={index} 
-              className="text-white/60 font-display font-bold text-xl md:text-2xl whitespace-nowrap opacity-70 hover:opacity-100 hover:text-white transition-all duration-300"
+              className="flex-shrink-0 w-48 mx-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
             >
-              {brand}
+              <img 
+                src={brand.logo} 
+                alt={brand.name} 
+                className="max-h-12 w-auto object-contain"
+                onError={(e) => {
+                  // Fallback to text if the image fails to load
+                  e.currentTarget.style.display = 'none';
+                  const textNode = document.createElement('span');
+                  textNode.innerText = brand.name;
+                  textNode.className = "font-display font-bold text-2xl text-vald-deep-navy";
+                  e.currentTarget.parentElement?.appendChild(textNode);
+                }}
+              />
             </div>
           ))}
-          
-          <button className="flex-shrink-0 w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors ml-auto">
-            <ArrowRight className="w-4 h-4" />
-          </button>
         </div>
       </div>
     </section>
