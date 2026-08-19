@@ -1,177 +1,75 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button } from "@/components/ui/Button";
-import { MapPin, Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
+import { EnquiryType, EnquirySelector } from "@/components/contact/EnquirySelector";
+import { DynamicContactForm } from "@/components/contact/DynamicContactForm";
+import { ContactMethods } from "@/components/contact/ContactMethods";
+import { LocationCard } from "@/components/contact/LocationCard";
 
 export default function ContactPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      // Reset form visually after 3 seconds
-      setTimeout(() => setIsSubmitted(false), 3000);
-    }, 1500);
-  };
+  const [enquiryType, setEnquiryType] = useState<EnquiryType>("product");
 
   return (
-    <div className="bg-vald-off-white min-h-screen pt-32 pb-20 overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12 relative">
-        {/* Decorative Background Element */}
-        <div className="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 bg-vald-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div className="bg-vald-off-white min-h-screen pt-32 pb-24 overflow-hidden relative">
+      {/* Background Watermark */}
+      <div className="absolute top-1/4 -right-[10%] text-[20vw] font-display font-black text-vald-deep-navy/[0.02] pointer-events-none select-none tracking-tighter leading-none z-0">
+        VALD.
+      </div>
+      
+      {/* Subtle Industrial Texture (Simulated with CSS) */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGRlZnM+PHBhdHRlcm4gaWQ9ImEiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNDBoNDBWMEgwem0yMCAyMGgtdjIwSDIweiIgZmlsbD0iIzA5MTIyNSIgZmlsbC1vcGFjaXR5PSIwLjAyIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+')] opacity-50 z-0 pointer-events-none mix-blend-multiply"></div>
 
-        {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-vald-deep-navy mb-6">
-            Get in Touch
-          </h1>
-          <p className="text-lg text-vald-text-grey">
-            Whether you are looking for a specific tool, requesting a bulk order quote, or need technical support, our experts are here to help.
-          </p>
-        </div>
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
+          
+          {/* LEFT COLUMN: 45% */}
+          <div className="w-full lg:w-[45%] flex flex-col">
+            <h1 className="text-5xl lg:text-7xl font-display font-black text-vald-deep-navy leading-[1.1] tracking-tight mb-6">
+              LET'S BUILD<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-vald-gold to-yellow-600">SOMETHING</span><br />
+              THAT WORKS.
+            </h1>
+            <p className="text-lg font-medium text-vald-text-grey mb-12 max-w-md">
+              Tell us what you need. We'll help you find the right product, source it, and get it moving.
+            </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 relative z-10">
-          {/* Contact Box (Form) */}
-          <div className="bg-white p-8 md:p-10 shadow-lg shadow-vald-deep-navy/5 border border-vald-soft-grey/50 rounded-xl transition-all duration-300 hover:shadow-xl hover:border-vald-gold/30">
-            <h3 className="text-2xl font-display font-bold text-vald-deep-navy mb-6">
-              Send us a message
-            </h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2 group">
-                  <label htmlFor="firstName" className="text-xs font-bold text-vald-deep-navy uppercase tracking-wider transition-colors group-focus-within:text-vald-gold">First Name *</label>
-                  <input type="text" id="firstName" className="w-full bg-vald-off-white border-2 border-transparent focus:bg-white focus:border-vald-gold focus:ring-4 focus:ring-vald-gold/10 rounded-md px-4 py-3 outline-none transition-all duration-300" placeholder="John" required />
-                </div>
-                <div className="space-y-2 group">
-                  <label htmlFor="lastName" className="text-xs font-bold text-vald-deep-navy uppercase tracking-wider transition-colors group-focus-within:text-vald-gold">Last Name *</label>
-                  <input type="text" id="lastName" className="w-full bg-vald-off-white border-2 border-transparent focus:bg-white focus:border-vald-gold focus:ring-4 focus:ring-vald-gold/10 rounded-md px-4 py-3 outline-none transition-all duration-300" placeholder="Doe" required />
-                </div>
-              </div>
-              
-              <div className="space-y-2 group">
-                <label htmlFor="email" className="text-xs font-bold text-vald-deep-navy uppercase tracking-wider transition-colors group-focus-within:text-vald-gold">Email Address *</label>
-                <input type="email" id="email" className="w-full bg-vald-off-white border-2 border-transparent focus:bg-white focus:border-vald-gold focus:ring-4 focus:ring-vald-gold/10 rounded-md px-4 py-3 outline-none transition-all duration-300" placeholder="john@company.com" required />
-              </div>
-              
-              <div className="space-y-2 group">
-                <label htmlFor="company" className="text-xs font-bold text-vald-deep-navy uppercase tracking-wider transition-colors group-focus-within:text-vald-gold">Company Name</label>
-                <input type="text" id="company" className="w-full bg-vald-off-white border-2 border-transparent focus:bg-white focus:border-vald-gold focus:ring-4 focus:ring-vald-gold/10 rounded-md px-4 py-3 outline-none transition-all duration-300" placeholder="Company L.L.C" />
-              </div>
-
-              <div className="space-y-2 group">
-                <label htmlFor="message" className="text-xs font-bold text-vald-deep-navy uppercase tracking-wider transition-colors group-focus-within:text-vald-gold">Message *</label>
-                <textarea id="message" rows={4} className="w-full bg-vald-off-white border-2 border-transparent focus:bg-white focus:border-vald-gold focus:ring-4 focus:ring-vald-gold/10 rounded-md px-4 py-3 outline-none transition-all duration-300 resize-none" placeholder="How can we help you today?" required></textarea>
-              </div>
-
-              <Button 
-                type="submit" 
-                variant="dark" 
-                className={`w-full relative overflow-hidden transition-all duration-300 ${isSubmitted ? 'bg-green-600 hover:bg-green-700' : ''}`}
-                disabled={isSubmitting}
-              >
-                <span className={`transition-opacity duration-300 ${isSubmitting || isSubmitted ? 'opacity-0' : 'opacity-100'}`}>
-                  SEND MESSAGE
-                </span>
-                
-                {isSubmitting && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  </div>
-                )}
-                
-                {isSubmitted && (
-                  <div className="absolute inset-0 flex items-center justify-center gap-2 text-white">
-                    <CheckCircle2 className="w-5 h-5" />
-                    <span>MESSAGE SENT</span>
-                  </div>
-                )}
-              </Button>
-            </form>
-          </div>
-
-          {/* Contact Details */}
-          <div className="flex flex-col justify-between">
-            <div>
-              <h3 className="text-2xl font-display font-bold text-vald-deep-navy mb-8">
-                Our Office
-              </h3>
-              
-              <div className="space-y-8">
-                <div className="group flex items-start gap-5 cursor-pointer">
-                  <div className="w-12 h-12 bg-white shadow-sm border border-vald-soft-grey/30 rounded-xl flex items-center justify-center flex-shrink-0 text-vald-gold transition-all duration-300 group-hover:scale-110 group-hover:bg-vald-gold group-hover:text-vald-deep-navy group-hover:shadow-md">
-                    <MapPin className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-1" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-vald-deep-navy mb-1 uppercase tracking-wider text-sm transition-colors duration-300 group-hover:text-vald-gold">Headquarters</h4>
-                    <p className="text-vald-text-grey leading-relaxed transition-colors duration-300 group-hover:text-vald-deep-navy">
-                      Dubai, United Arab Emirates<br />
-                      Serving clients across the GCC, Africa, and Global Markets.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="group flex items-start gap-5 cursor-pointer">
-                  <div className="w-12 h-12 bg-white shadow-sm border border-vald-soft-grey/30 rounded-xl flex items-center justify-center flex-shrink-0 text-vald-gold transition-all duration-300 group-hover:scale-110 group-hover:bg-vald-gold group-hover:text-vald-deep-navy group-hover:shadow-md">
-                    <Phone className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-vald-deep-navy mb-1 uppercase tracking-wider text-sm transition-colors duration-300 group-hover:text-vald-gold">Phone</h4>
-                    <a href="tel:+971552555517" className="text-vald-text-grey transition-colors duration-300 group-hover:text-vald-deep-navy inline-block mb-1">
-                      +971 55 255 5517
-                    </a>
-                  </div>
-                </div>
-
-                <div className="group flex items-start gap-5 cursor-pointer">
-                  <div className="w-12 h-12 bg-white shadow-sm border border-vald-soft-grey/30 rounded-xl flex items-center justify-center flex-shrink-0 text-vald-gold transition-all duration-300 group-hover:scale-110 group-hover:bg-vald-gold group-hover:text-vald-deep-navy group-hover:shadow-md">
-                    <Mail className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-vald-deep-navy mb-1 uppercase tracking-wider text-sm transition-colors duration-300 group-hover:text-vald-gold">Email</h4>
-                    <a href="mailto:info@vald.com" className="text-vald-text-grey transition-colors duration-300 group-hover:text-vald-deep-navy">
-                      info@vald.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="group flex items-start gap-5 cursor-default">
-                  <div className="w-12 h-12 bg-white shadow-sm border border-vald-soft-grey/30 rounded-xl flex items-center justify-center flex-shrink-0 text-vald-gold transition-all duration-300 group-hover:scale-110 group-hover:bg-vald-gold group-hover:text-vald-deep-navy group-hover:shadow-md">
-                    <Clock className="w-5 h-5 transition-transform duration-300 group-hover:rotate-90" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-vald-deep-navy mb-1 uppercase tracking-wider text-sm transition-colors duration-300 group-hover:text-vald-gold">Business Hours</h4>
-                    <p className="text-vald-text-grey transition-colors duration-300 group-hover:text-vald-deep-navy">
-                      Monday - Saturday<br />
-                      8:00 AM - 6:00 PM (GST)
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="mb-12">
+              <EnquirySelector selected={enquiryType} onSelect={setEnquiryType} />
             </div>
 
-            {/* Map Placeholder */}
-            <div className="mt-12 h-64 bg-gray-200 w-full relative overflow-hidden group rounded-xl shadow-inner border border-vald-soft-grey/20 cursor-pointer">
-              <div className="absolute inset-0 bg-vald-deep-navy/5 flex items-center justify-center transition-all duration-500 group-hover:bg-vald-deep-navy/80">
-                <div className="flex flex-col items-center gap-2 transform translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                  <MapPin className="w-8 h-8 text-vald-gold" />
-                  <p className="text-white font-bold uppercase tracking-widest text-sm">
-                    Open in Maps
-                  </p>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0">
-                  <MapPin className="w-6 h-6 text-vald-deep-navy/40" />
-                </div>
-              </div>
+            <div className="hidden lg:block border-t border-vald-soft-grey/30 pt-12">
+              <ContactMethods />
+              <LocationCard />
             </div>
           </div>
+
+          {/* RIGHT COLUMN: 55% */}
+          <div className="w-full lg:w-[55%]">
+            <div className="sticky top-32">
+              <DynamicContactForm enquiryType={enquiryType} />
+            </div>
+          </div>
+
+          {/* MOBILE ONLY CONTACT METHODS (Bottom Stacked) */}
+          <div className="block lg:hidden border-t border-vald-soft-grey/30 pt-12 mt-4">
+            <ContactMethods />
+            <LocationCard />
+          </div>
+          
         </div>
+      </div>
+      
+      {/* Mobile Sticky Action Bar */}
+      <div className="lg:hidden fixed bottom-0 left-0 w-full bg-white border-t border-vald-soft-grey p-4 z-50 flex items-center justify-between shadow-2xl">
+        <span className="text-xs font-bold text-vald-deep-navy uppercase tracking-widest">
+          Need an immediate response?
+        </span>
+        <a 
+          href={`https://wa.me/971552555517`}
+          className="bg-vald-gold text-white text-xs font-bold px-4 py-2 rounded uppercase tracking-wider shadow hover:bg-yellow-600 transition-colors"
+        >
+          WhatsApp VALD
+        </a>
       </div>
     </div>
   );
