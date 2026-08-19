@@ -37,13 +37,29 @@ export default function ContactPage() {
               <EnquirySelector selected={enquiryType} onSelect={setEnquiryType} />
             </div>
 
-            {/* Banner Image filling the empty space */}
-            <div className="hidden lg:block mt-8">
-              <img 
-                src="/images/contact-logo.png" 
-                alt="VALD Banner" 
-                className="w-full h-auto object-contain"
-              />
+            {/* Scrolling Text Banner filling the empty space */}
+            <div className="hidden lg:flex w-full mt-auto mb-12 overflow-hidden relative border-y border-vald-soft-grey/30 py-6 bg-white shadow-sm">
+              <div className="flex w-max animate-marquee">
+                {[...Array(6)].map((_, i) => (
+                  <div key={i} className="flex items-center px-12 whitespace-nowrap">
+                    <span className="font-display font-black text-4xl text-vald-deep-navy tracking-tight">
+                      VALD<span className="text-vald-gold">.</span>
+                    </span>
+                    <div className="w-[2px] h-12 bg-vald-deep-navy/20 mx-6"></div>
+                    <div className="flex flex-col justify-center gap-1.5">
+                      <span className="font-sans font-bold text-[16px] leading-none text-vald-deep-navy tracking-widest uppercase">
+                        VENUS ALJADEED
+                      </span>
+                      <span className="font-sans font-medium text-[10px] leading-none text-vald-deep-navy tracking-[0.2em] uppercase">
+                        WHOLESALE TRADING LLC
+                      </span>
+                      <span className="font-sans font-semibold text-[9px] leading-none text-vald-text-grey tracking-[0.15em] uppercase">
+                        BUILDING & CONSTRUCTION MATERIALS
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
