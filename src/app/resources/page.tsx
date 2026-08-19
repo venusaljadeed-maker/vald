@@ -82,6 +82,11 @@ export default function ResourcesPage() {
                 title: "Building Materials",
                 image: "/images/building-materials.jpg",
                 items: ["Industrial Plywood Sheets", "Solid Wooden Beams", "Structural Timber", "Marine Grade Plywood", "Formwork Plywood", "MDF & Particle Boards"]
+              },
+              {
+                title: "Scaffolding Materials",
+                image: "/images/scaffolding.jpg",
+                items: ["Heavy Duty Steel Frames", "Galvanized Metal Planks", "Scaffolding Pipes & Tubes", "Couplers & Clamps", "Base Jacks & U-Heads", "Aluminum Scaffolding Towers"]
               }
             ].map((category, idx) => (
               <div key={idx} className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center group">
