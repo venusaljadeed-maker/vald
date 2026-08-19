@@ -11,25 +11,15 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8 mb-16">
           {/* Brand Info */}
           <div className="lg:pr-12">
-            <Link href="/" className="flex items-center gap-4 mb-8 hover:opacity-90 transition-opacity">
-              <div className="flex items-baseline">
-                <span className="font-display font-bold text-5xl md:text-6xl text-white tracking-tight">
-                  VALD
-                </span>
-                <span className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-vald-gold ml-1.5"></span>
-              </div>
-              <div className="w-px h-14 md:h-20 bg-white/30"></div>
-              <div className="flex flex-col justify-center">
-                <span className="font-display font-bold text-xl md:text-2xl text-white tracking-widest leading-none mb-1.5">
-                  VENUS ALJADEED
-                </span>
-                <span className="text-[9px] md:text-[11px] font-semibold text-white tracking-[0.25em] uppercase leading-tight mb-0.5">
-                  Wholesale Trading LLC
-                </span>
-                <span className="text-[8px] md:text-[10px] font-medium text-white/70 tracking-[0.15em] uppercase leading-tight">
-                  Building & Construction Materials
-                </span>
-              </div>
+            <Link href="/" className="flex items-center mb-8">
+              <Image 
+                src="/images/footer-logo-exact.png" 
+                alt="VALD" 
+                width={400} 
+                height={120} 
+                className="h-16 md:h-24 w-auto object-contain hover:opacity-90 transition-opacity"
+                priority={false}
+              />
             </Link>
             <p className="text-vald-text-grey text-sm leading-relaxed mb-6">
               Importers, Exporters & Suppliers of General Hardware, Safety, Lifting, Tools & Industrial Solutions in UAE and across the world.
