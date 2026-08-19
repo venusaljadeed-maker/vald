@@ -37,12 +37,12 @@ export default function ContactPage() {
               <EnquirySelector selected={enquiryType} onSelect={setEnquiryType} />
             </div>
 
-            {/* Logo filling the empty space */}
-            <div className="hidden lg:flex items-center justify-center border-t border-vald-soft-grey/30 pt-16 pb-8">
+            {/* Banner Image filling the empty space */}
+            <div className="hidden lg:block mt-8">
               <img 
                 src="/images/contact-logo.png" 
-                alt="VALD Logo" 
-                className="w-full max-w-[280px] h-auto object-contain opacity-90"
+                alt="VALD Banner" 
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
