@@ -51,11 +51,6 @@ export const Header = () => {
               className="text-xs font-semibold text-vald-deep-navy hover:text-vald-gold transition-colors flex items-center gap-1 uppercase tracking-widest relative group"
             >
               {link.name}
-              {link.hasDropdown && (
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-0.5">
-                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              )}
               {/* Hover underline */}
               <span className="absolute -bottom-1.5 left-1/2 w-0 h-0.5 bg-vald-gold transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
             </Link>
