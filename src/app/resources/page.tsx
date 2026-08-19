@@ -77,6 +77,11 @@ export default function ResourcesPage() {
                 title: "Garage & Painting",
                 image: "/images/garage.jpg",
                 items: ["Sigma Air Compressors", "Battery Chargers & Boosters", "Bottle & Trolley Jacks", "Hydraulic Car Lifts", "Paint Brushes & Rollers", "Spray Guns & Chisels", "Extension Poles & Paint Trays"]
+              },
+              {
+                title: "Building Materials",
+                image: "/images/building-materials.jpg",
+                items: ["Industrial Plywood Sheets", "Solid Wooden Beams", "Structural Timber", "Marine Grade Plywood", "Formwork Plywood", "MDF & Particle Boards"]
               }
             ].map((category, idx) => (
               <div key={idx} className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center group">
