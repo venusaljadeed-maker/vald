@@ -42,14 +42,29 @@ interface DynamicContactFormProps {
   enquiryType: EnquiryType;
 }
 
+interface CombinedFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  company?: string;
+  product?: string;
+  quantity?: string;
+  requirement?: string;
+  productCategory?: string;
+  deliveryLocation?: string;
+  additionalReqs?: string;
+  lookingFor?: string;
+  additionalInfo?: string;
+}
+
 export const DynamicContactForm = ({ enquiryType }: DynamicContactFormProps) => {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // We use the most comprehensive schema for types to make TypeScript happy
-  const { register, handleSubmit, formState: { errors }, trigger } = useForm({
-    resolver: zodResolver(formSchemas[enquiryType]),
+  const { register, handleSubmit, formState: { errors }, trigger } = useForm<CombinedFormData>({
+    resolver: zodResolver(formSchemas[enquiryType] as any) as any,
     mode: "onBlur"
   });
 
