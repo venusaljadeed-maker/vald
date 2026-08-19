@@ -37,9 +37,13 @@ export default function ContactPage() {
               <EnquirySelector selected={enquiryType} onSelect={setEnquiryType} />
             </div>
 
-            <div className="hidden lg:block border-t border-vald-soft-grey/30 pt-12">
-              <ContactMethods />
-              <LocationCard />
+            {/* Logo filling the empty space */}
+            <div className="hidden lg:flex items-center justify-center border-t border-vald-soft-grey/30 pt-16 pb-8">
+              <img 
+                src="/images/contact-logo.png" 
+                alt="VALD Logo" 
+                className="w-full max-w-[280px] h-auto object-contain opacity-90"
+              />
             </div>
           </div>
 
@@ -49,13 +53,6 @@ export default function ContactPage() {
               <DynamicContactForm enquiryType={enquiryType} />
             </div>
           </div>
-
-          {/* MOBILE ONLY CONTACT METHODS (Bottom Stacked) */}
-          <div className="block lg:hidden border-t border-vald-soft-grey/30 pt-12 mt-4">
-            <ContactMethods />
-            <LocationCard />
-          </div>
-          
         </div>
       </div>
       
