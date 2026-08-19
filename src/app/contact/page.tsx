@@ -20,11 +20,9 @@ export default function ContactPage() {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGRlZnM+PHBhdHRlcm4gaWQ9ImEiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNDBoNDBWMEgwem0yMCAyMGgtdjIwSDIweiIgZmlsbD0iIzA5MTIyNSIgZmlsbC1vcGFjaXR5PSIwLjAyIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+')] opacity-50 z-0 pointer-events-none mix-blend-multiply"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="max-w-3xl mb-16">
-          <h1 className="text-5xl lg:text-7xl font-display font-black text-vald-deep-navy leading-[0.9] tracking-tight mb-4">
-            LET'S BUILD<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-vald-gold to-yellow-600">SOMETHING</span><br />
-            THAT WORKS.
+        <div className="w-full mb-16">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black text-vald-deep-navy leading-[0.9] tracking-tight mb-4">
+            LET'S BUILD <span className="text-transparent bg-clip-text bg-gradient-to-r from-vald-gold to-yellow-600">SOMETHING</span> THAT WORKS.
           </h1>
           <p className="text-lg font-medium text-vald-text-grey max-w-md">
             Tell us what you need. We'll help you find the right product, source it, and get it moving.
