@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
@@ -35,11 +36,16 @@ export const Header = () => {
     >
       <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-baseline">
-          <span className="font-display font-bold text-4xl text-vald-deep-navy tracking-tight">
-            VALD
-          </span>
-          <span className="w-2.5 h-2.5 rounded-full bg-vald-gold ml-1"></span>
+        <Link href="/" className="flex items-center">
+          <Image 
+            src="/images/logo.png" 
+            alt="VALD Logo" 
+            width={120} 
+            height={40} 
+            className="h-10 w-auto object-contain"
+            priority
+            unoptimized
+          />
         </Link>
 
         {/* Desktop Nav */}
