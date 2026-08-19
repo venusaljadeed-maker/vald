@@ -7,9 +7,9 @@ export const Footer = () => {
   return (
     <footer className="bg-[#0b1424] text-white pt-20 pb-10 border-t border-vald-soft-grey/10">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           {/* Brand Info */}
-          <div className="lg:pr-8">
+          <div className="lg:col-span-4 lg:pr-12">
             <Link href="/" className="flex items-baseline mb-6">
               <span className="font-display font-bold text-4xl text-white tracking-tight">
                 VALD
@@ -19,13 +19,10 @@ export const Footer = () => {
             <p className="text-vald-text-grey text-sm leading-relaxed mb-6">
               Importers, Exporters & Suppliers of General Hardware, Safety, Lifting, Tools & Industrial Solutions in UAE and across the world.
             </p>
-            <div className="text-xs text-vald-text-grey">
-              <p className="mb-1">© 2026 VALD. All Rights Reserved.</p>
-            </div>
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="lg:col-span-2">
             <h4 className="text-xs font-semibold uppercase tracking-widest text-vald-gold mb-6">Quick Links</h4>
             <ul className="space-y-3 text-sm text-vald-text-grey">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
@@ -39,7 +36,7 @@ export const Footer = () => {
           </div>
 
           {/* Product Categories */}
-          <div>
+          <div className="lg:col-span-4">
             <h4 className="text-xs font-semibold uppercase tracking-widest text-vald-gold mb-6">Product Categories</h4>
             <div className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm text-vald-text-grey">
               <Link href="/products/lifting" className="hover:text-white transition-colors">Lifting Equipment</Link>
@@ -56,7 +53,7 @@ export const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="lg:col-span-2">
             <h4 className="text-xs font-semibold uppercase tracking-widest text-vald-gold mb-6">Contact Us</h4>
             <ul className="space-y-4 text-sm text-vald-text-grey">
               <li className="flex gap-3">
