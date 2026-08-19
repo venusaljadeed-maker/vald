@@ -28,10 +28,10 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out bg-white",
         isScrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm py-4"
-          : "bg-transparent py-6"
+          ? "shadow-sm py-4"
+          : "py-6 border-b border-vald-soft-grey/30"
       )}
     >
       <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
