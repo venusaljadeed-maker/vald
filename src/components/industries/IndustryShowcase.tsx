@@ -54,8 +54,8 @@ export const IndustryShowcase = () => {
         </div>
       </div>
 
-      <div className="w-full overflow-hidden px-6 lg:px-12 pb-12">
-        <div className="flex gap-4 min-h-[400px]">
+      <div className="w-full overflow-x-auto overflow-y-hidden hide-scrollbar pb-12">
+        <div className="flex gap-4 min-h-[400px] w-max md:w-full px-6 lg:px-12">
           {INDUSTRIES.map((industry, index) => (
             <motion.div
               key={industry.id}

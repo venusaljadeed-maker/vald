@@ -31,7 +31,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="text-5xl md:text-6xl lg:text-[5rem] leading-[1.05] font-display font-bold text-vald-deep-navy mb-8"
+            className="text-4xl md:text-5xl lg:text-[5rem] leading-[1.05] font-display font-bold text-vald-deep-navy mb-8"
           >
             BUILT FOR <br /> THE WORK. <br />
             <span className="text-vald-gold">READY FOR <br /> THE WORLD.</span>

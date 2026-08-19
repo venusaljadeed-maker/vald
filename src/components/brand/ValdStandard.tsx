@@ -113,8 +113,8 @@ export const ValdStandard = () => {
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-vald-deep-navy">THE VALD STANDARD</span>
               </div>
               
-              <h2 className="text-[44px] lg:text-[52px] font-sans font-bold text-vald-deep-navy leading-[1.15] mb-8 tracking-tight whitespace-nowrap">
-                We don&apos;t just supply.<br />
+              <h2 className="text-4xl md:text-[44px] lg:text-[52px] font-sans font-bold text-vald-deep-navy leading-[1.15] mb-8 tracking-tight md:whitespace-nowrap">
+                We don&apos;t just supply.<br className="hidden md:block" />
                 We add <span className="text-vald-gold">value</span>.
               </h2>
               <p className="text-[15px] font-sans text-vald-text-grey leading-[1.8] max-w-[420px] mb-12">
