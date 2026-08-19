@@ -21,7 +21,7 @@ export default function ContactPage() {
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-3xl mb-16">
-          <h1 className="text-5xl lg:text-7xl font-display font-black text-vald-deep-navy leading-[1.1] tracking-tight mb-6">
+          <h1 className="text-5xl lg:text-7xl font-display font-black text-vald-deep-navy leading-[0.9] tracking-tight mb-4">
             LET'S BUILD<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-vald-gold to-yellow-600">SOMETHING</span><br />
             THAT WORKS.
