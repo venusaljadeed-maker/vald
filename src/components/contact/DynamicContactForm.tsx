@@ -36,10 +36,6 @@ const formSchemas = {
     quantity: z.string().optional(),
     additionalInfo: z.string().optional(),
   }),
-  support: baseSchema.extend({
-    product: z.string().min(1, "Product is required"),
-    issue: z.string().min(1, "Please describe your issue"),
-  }),
 };
 
 interface DynamicContactFormProps {
@@ -64,7 +60,6 @@ export const DynamicContactForm = ({ enquiryType }: DynamicContactFormProps) => 
       if (enquiryType === "product") fieldsToValidate = ["product", "quantity"];
       if (enquiryType === "quote") fieldsToValidate = ["productCategory", "quantity", "deliveryLocation"];
       if (enquiryType === "custom") fieldsToValidate = ["lookingFor"];
-      if (enquiryType === "support") fieldsToValidate = ["product"];
     } else if (step === 2) {
       fieldsToValidate = ["firstName", "lastName", "email", "phone"];
     }
@@ -170,12 +165,6 @@ export const DynamicContactForm = ({ enquiryType }: DynamicContactFormProps) => 
                 <>
                   <EditorialInput label="What are you looking for?" isTextArea {...register("lookingFor")} error={errors.lookingFor?.message as string} />
                   <EditorialInput label="Estimated Quantity" {...register("quantity")} />
-                </>
-              )}
-              {enquiryType === "support" && (
-                <>
-                  <EditorialInput label="Product Name / Model" {...register("product")} error={errors.product?.message as string} />
-                  <EditorialInput label="Describe the issue or question" isTextArea {...register("issue")} error={errors.issue?.message as string} />
                 </>
               )}
             </motion.div>

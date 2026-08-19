@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Package, Calculator, Lightbulb, Wrench } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export type EnquiryType = "product" | "quote" | "custom" | "support";
+export type EnquiryType = "product" | "quote" | "custom";
 
 const ENQUIRY_OPTIONS = [
   {
@@ -23,12 +23,6 @@ const ENQUIRY_OPTIONS = [
     title: "A CUSTOM REQUIREMENT",
     description: "Tell us what you're looking for and let VALD source it.",
     icon: <Lightbulb className="w-5 h-5" />
-  },
-  {
-    id: "support" as EnquiryType,
-    title: "TECHNICAL SUPPORT",
-    description: "Need help choosing the right equipment?",
-    icon: <Wrench className="w-5 h-5" />
   }
 ];
 
