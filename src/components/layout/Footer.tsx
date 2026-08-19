@@ -11,13 +11,13 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8 mb-16">
           {/* Brand Info */}
           <div className="lg:pr-12">
-            <Link href="/" className="flex items-center mb-6">
+            <Link href="/" className="flex items-center mb-8">
               <Image 
                 src="/images/footer-logo.png" 
                 alt="VALD" 
-                width={220} 
-                height={70} 
-                className="h-12 w-auto object-contain brightness-0 invert opacity-90"
+                width={400} 
+                height={120} 
+                className="h-16 md:h-24 w-auto object-contain brightness-0 invert opacity-90"
                 priority={false}
               />
             </Link>
