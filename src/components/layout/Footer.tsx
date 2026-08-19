@@ -15,9 +15,9 @@ export const Footer = () => {
               <Image 
                 src="/images/footer-logo-exact.png" 
                 alt="VALD" 
-                width={400} 
-                height={120} 
-                className="h-16 md:h-24 w-auto object-contain hover:opacity-90 transition-opacity"
+                width={500} 
+                height={150} 
+                className="h-24 md:h-36 w-auto object-contain hover:opacity-90 transition-opacity"
                 priority={false}
               />
             </Link>
