@@ -1,5 +1,4 @@
 import { RequirementProcess } from "@/components/process/RequirementProcess";
-import { FinalCTA } from "@/components/quote/FinalCTA";
 
 export default function AboutPage() {
   return (
@@ -37,8 +36,6 @@ export default function AboutPage() {
 
       {/* Requirement Process Component inserted below the About content */}
       <RequirementProcess />
-
-      <FinalCTA />
     </>
   );
 }
