@@ -101,7 +101,7 @@ export const ValdStandard = () => {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-0 h-full">
           
           {/* LEFT: 42% */}
-          <div className="w-full lg:w-[42%] flex flex-col justify-center pr-12 lg:pr-24">
+          <div className="w-full lg:w-[42%] flex flex-col pt-12 pr-12 lg:pr-24">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -173,7 +173,7 @@ export const ValdStandard = () => {
                 return (
                   <div 
                     key={principle.id}
-                    className="relative p-12 flex flex-col justify-center cursor-pointer group"
+                    className={`relative p-12 flex flex-col justify-center cursor-pointer group ${isActive ? 'z-30' : ''}`}
                     onMouseEnter={() => {
                       setIsHovering(true);
                       setActiveIndex(principle.index);
