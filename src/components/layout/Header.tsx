@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
@@ -37,14 +36,10 @@ export const Header = () => {
       <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <Image 
+          <img 
             src="/images/logo.png" 
             alt="VALD Logo" 
-            width={120} 
-            height={40} 
-            className="h-10 w-auto object-contain"
-            priority
-            unoptimized
+            className="h-12 w-auto mix-blend-multiply object-contain" 
           />
         </Link>
 
