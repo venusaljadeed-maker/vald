@@ -2,7 +2,7 @@ const { Jimp } = require("jimp");
 
 async function removeBackground() {
   try {
-    const image = await Jimp.read("image.png");
+    const image = await Jimp.read("image copy.png");
     
     // Convert pure white (and near white) to transparent
     image.scan(0, 0, image.bitmap.width, image.bitmap.height, function (x, y, idx) {
@@ -16,8 +16,8 @@ async function removeBackground() {
       }
     });
 
-    await image.write("public/images/logo.png");
-    console.log("Background removed and saved to public/images/logo.png");
+    await image.write("public/images/footer-logo.png");
+    console.log("Background removed and saved to public/images/footer-logo.png");
   } catch (error) {
     console.error("Error processing image:", error);
   }

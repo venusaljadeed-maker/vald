@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Phone, Mail, FileText } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
@@ -10,11 +11,15 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8 mb-16">
           {/* Brand Info */}
           <div className="lg:pr-12">
-            <Link href="/" className="flex items-baseline mb-6">
-              <span className="font-display font-bold text-4xl text-white tracking-tight">
-                VALD
-              </span>
-              <span className="w-2.5 h-2.5 rounded-full bg-vald-gold ml-1"></span>
+            <Link href="/" className="flex items-center mb-6">
+              <Image 
+                src="/images/footer-logo.png" 
+                alt="VALD" 
+                width={220} 
+                height={70} 
+                className="h-12 w-auto object-contain brightness-0 invert opacity-90"
+                priority={false}
+              />
             </Link>
             <p className="text-vald-text-grey text-sm leading-relaxed mb-6">
               Importers, Exporters & Suppliers of General Hardware, Safety, Lifting, Tools & Industrial Solutions in UAE and across the world.
