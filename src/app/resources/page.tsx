@@ -87,6 +87,11 @@ export default function ResourcesPage() {
                 title: "Scaffolding Materials",
                 image: "/images/scaffolding.jpg",
                 items: ["Heavy Duty Steel Frames", "Galvanized Metal Planks", "Scaffolding Pipes & Tubes", "Couplers & Clamps", "Base Jacks & U-Heads", "Aluminum Scaffolding Towers"]
+              },
+              {
+                title: "Packing Materials",
+                image: "/images/packing-materials.jpg",
+                items: ["Clear, Brown & Duct Tapes", "Masking & Warning Tapes", "Stretch Film & Bubble Rolls", "Sealant Tape & Rubber Sheets", "Corrugated Rolls"]
               }
             ].map((category, idx) => (
               <div key={idx} className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center group">
