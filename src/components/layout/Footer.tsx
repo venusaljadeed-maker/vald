@@ -7,9 +7,9 @@ export const Footer = () => {
   return (
     <footer className="bg-[#0b1424] text-white pt-20 pb-10 border-t border-vald-soft-grey/10">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8 mb-16">
           {/* Brand Info */}
-          <div className="lg:col-span-4 lg:pr-12">
+          <div className="lg:pr-12">
             <Link href="/" className="flex items-baseline mb-6">
               <span className="font-display font-bold text-4xl text-white tracking-tight">
                 VALD
@@ -22,38 +22,18 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2">
+          <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-vald-gold mb-6">Quick Links</h4>
             <ul className="space-y-3 text-sm text-vald-text-grey">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/products" className="hover:text-white transition-colors">Products</Link></li>
-              <li><Link href="/industries" className="hover:text-white transition-colors">Industries</Link></li>
-              <li><Link href="/brands" className="hover:text-white transition-colors">Brands</Link></li>
               <li><Link href="/resources" className="hover:text-white transition-colors">Resources</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
-          {/* Product Categories */}
-          <div className="lg:col-span-4">
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-vald-gold mb-6">Product Categories</h4>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm text-vald-text-grey">
-              <Link href="/products/lifting" className="hover:text-white transition-colors">Lifting Equipment</Link>
-              <Link href="/products/abrasives" className="hover:text-white transition-colors">Abrasives</Link>
-              <Link href="/products/safety" className="hover:text-white transition-colors">Safety Equipment</Link>
-              <Link href="/products/drill-bits" className="hover:text-white transition-colors">Drill Bits</Link>
-              <Link href="/products/welding" className="hover:text-white transition-colors">Welding Equipment</Link>
-              <Link href="/products/fasteners" className="hover:text-white transition-colors">Fasteners</Link>
-              <Link href="/products/tools" className="hover:text-white transition-colors">Tools & Machines</Link>
-              <Link href="/products/garage" className="hover:text-white transition-colors">Garage</Link>
-              <Link href="/products/cutting" className="hover:text-white transition-colors">Cutting & Grinding</Link>
-              <Link href="/products/protection" className="hover:text-white transition-colors">Protection</Link>
-            </div>
-          </div>
-
           {/* Contact */}
-          <div className="lg:col-span-2">
+          <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-vald-gold mb-6">Contact Us</h4>
             <ul className="space-y-4 text-sm text-vald-text-grey">
               <li className="flex gap-3">
