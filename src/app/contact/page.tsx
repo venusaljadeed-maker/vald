@@ -64,7 +64,7 @@ export default function ContactPage() {
           </div>
 
           {/* RIGHT COLUMN: 55% */}
-          <div className="w-full lg:w-[55%]">
+          <div className="w-full lg:w-[55%] lg:mt-[44px]">
             <div className="sticky top-32">
               <DynamicContactForm enquiryType={enquiryType} />
             </div>
