@@ -64,9 +64,11 @@ export const Header = () => {
 
         {/* Right Actions */}
         <div className="flex items-center gap-4">
-          <Button variant="dark" className="hidden sm:flex">
-            GET A QUOTE
-          </Button>
+          <Link href="/contact">
+            <Button variant="dark" className="hidden sm:flex">
+              GET A QUOTE
+            </Button>
+          </Link>
           <button className="xl:hidden w-10 h-10 border border-vald-soft-grey rounded-full flex items-center justify-center text-vald-deep-navy hover:bg-vald-soft-grey transition-colors">
             <Menu className="w-5 h-5" />
           </button>

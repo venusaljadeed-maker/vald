@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowRight, Clock, DollarSign, Truck, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
@@ -40,9 +41,11 @@ export const FinalCTA = () => {
             Send us your requirement and our team will get back to you with the best solution.
           </p>
 
-          <Button variant="primary" size="lg" withArrow className="mb-12">
-            SEND YOUR REQUIREMENT
-          </Button>
+          <Link href="/contact" className="inline-block mb-12">
+            <Button variant="primary" size="lg" withArrow>
+              SEND YOUR REQUIREMENT
+            </Button>
+          </Link>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-white/10">
             {FEATURES.map((feature, index) => (
