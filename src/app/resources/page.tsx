@@ -1,4 +1,3 @@
-import { RequirementProcess } from "@/components/process/RequirementProcess";
 import { FinalCTA } from "@/components/quote/FinalCTA";
 
 export default function ResourcesPage() {
@@ -25,8 +24,6 @@ export default function ResourcesPage() {
           </p>
         </div>
       </div>
-
-      <RequirementProcess />
 
       {/* Detailed Product Catalog - Editorial Layout */}
       <section className="py-24 bg-white border-t border-gray-100">
