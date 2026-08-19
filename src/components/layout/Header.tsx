@@ -40,9 +40,9 @@ export const Header = () => {
           <Image 
             src="/images/logo.png" 
             alt="VALD" 
-            width={140} 
-            height={45} 
-            className="h-9 w-auto object-contain"
+            width={220} 
+            height={70} 
+            className="h-14 w-auto object-contain"
             priority
           />
         </Link>
