@@ -1,5 +1,4 @@
 import { RequirementProcess } from "@/components/process/RequirementProcess";
-import { StatsCounter } from "@/components/about/StatsCounter";
 
 export default function AboutPage() {
   return (
@@ -14,11 +13,9 @@ export default function AboutPage() {
           <h1 className="text-5xl md:text-6xl font-display font-bold text-vald-deep-navy mb-8 tracking-tight leading-tight">
             Elevating Industrial <br/> Procurement Worldwide
           </h1>
-          <p className="text-vald-text-grey text-lg max-w-2xl mx-auto leading-relaxed mb-12">
+          <p className="text-vald-text-grey text-lg max-w-2xl mx-auto leading-relaxed mb-4">
             VALD is a premier international industrial supply brand dedicated to bridging the gap between rigorous industrial requirements and flawless execution. We source, verify, and deliver high-grade machinery, safety equipment, and precision tools to operations across the globe.
           </p>
-          
-          <StatsCounter />
         </div>
       </div>
 
