@@ -56,7 +56,7 @@ export default function ResourcesPage() {
               {
                 title: "Tools & Machinery",
                 image: "/images/tools-machines-2.jpg",
-                items: ["Pipe Wrenches & Spanners", "Aviation Snips & Bolt Cutters", "Screwdriver & Socket Sets", "Allen Keys & Hammers", "C-Clamps & Vices", "Pneumatic Air Tools", "Magnetic Base Drilling Machines", "Cordless & Hand Drills", "Angle Grinders & Polishers"]
+                items: ["Pipe Wrenches & Spanners", "Aviation Snips & Bolt Cutters", "Screwdriver & Socket Sets", "Allen Keys & Hammers", "Pneumatic Air Tools", "Magnetic Base Drilling Machines", "Cordless & Hand Drills", "Angle Grinders & Polishers"]
               },
               {
                 title: "Cutting & Grinding",
@@ -105,6 +105,16 @@ export default function ResourcesPage() {
                 title: "Packing Materials",
                 image: "/images/packing-materials.jpg",
                 items: ["Clear, Brown & Duct Tapes", "Masking & Warning Tapes", "Stretch Film & Bubble Rolls", "Sealant Tape & Rubber Sheets", "Corrugated Rolls", "Carton Boxes"]
+              },
+              {
+                title: "Wire Products",
+                image: "/images/construction.jpg",
+                items: ["Black Annealed Wire", "Galvanized Wire", "PVC Coated Wire", "Binding Wire"]
+              },
+              {
+                title: "Electrical Cables",
+                image: "/images/engineering.jpg",
+                items: ["PVC Flexible Cables", "Armoured Cables", "Control Cables", "Submersible Cables", "Marine Cables", "Low Voltage Cables", "Rubber Cables", "Panel Wires"]
               }
             ].map((category, idx) => (
               <div key={idx} className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center group">
