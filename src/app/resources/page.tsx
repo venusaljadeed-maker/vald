@@ -66,7 +66,20 @@ export default function ResourcesPage() {
               {
                 title: "Fasteners & Hardware",
                 image: "/images/fasteners.jpg",
-                items: ["Self Drilling & Machine Screws", "Dry Wall & Chip Board Screws", "Coach Screws & Washers", "Hex Nuts & Anchor Bolts", "Rivets & Allen Bolts", "Dome Head Cup Nuts", "Shear Studs & Threaded Bars", "Clear, Brown & Duct Tapes"]
+                items: [
+                  "Self Drilling & SDS Screws",
+                  "Hex, Carriage & Roofing Bolts",
+                  "Expansion, Sleeve & Ceiling Anchors",
+                  "Cap Allen Bolts & U-Bolts",
+                  "Fix Bolts & Metal Frame Anchors",
+                  "Flange, Lock & Wing Nuts",
+                  "Clinching, Cage & Special Nuts",
+                  "Spring, Star & Square Washers",
+                  "Threaded Bars & Foundation Bolts",
+                  "Lifting Eye Bolts & Nuts",
+                  "Shackles, Snap Hooks & Turnbuckles",
+                  "Wire Rope Clips & Quick Links"
+                ]
               },
               {
                 title: "Abrasives & Drill Bits",
