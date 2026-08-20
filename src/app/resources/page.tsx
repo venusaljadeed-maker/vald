@@ -107,13 +107,13 @@ export default function ResourcesPage() {
                 items: ["Clear, Brown & Duct Tapes", "Masking & Warning Tapes", "Stretch Film & Bubble Rolls", "Sealant Tape & Rubber Sheets", "Corrugated Rolls", "Carton Boxes"]
               },
               {
-                title: "Wire Products",
-                image: "/images/construction.jpg",
-                items: ["Black Annealed Wire", "Galvanized Wire", "PVC Coated Wire", "Binding Wire"]
+                title: "Wire",
+                image: "/images/wire-products.jpg",
+                items: ["Black Annealed Wire", "Galvanized Wire", "PVC Coated Wire", "Binding Wire", "Stainless Steel Wire", "Barbed Wire", "Welded Wire Mesh", "Chain Link Fencing"]
               },
               {
                 title: "Electrical Cables",
-                image: "/images/engineering.jpg",
+                image: "/images/electrical-cables.jpg",
                 items: ["PVC Flexible Cables", "Armoured Cables", "Control Cables", "Submersible Cables", "Marine Cables", "Low Voltage Cables", "Rubber Cables", "Panel Wires"]
               }
             ].map((category, idx) => (
