@@ -85,11 +85,40 @@ export const DynamicContactForm = ({ enquiryType }: DynamicContactFormProps) => 
 
   const onSubmit = (data: any) => {
     setIsSubmitting(true);
-    // Simulate network request
+    
+    // Construct WhatsApp message
+    let message = `*New Enquiry from VALD Website*\n\n`;
+    message += `*Name:* ${data.firstName} ${data.lastName}\n`;
+    message += `*Email:* ${data.email}\n`;
+    message += `*Phone:* ${data.phone}\n`;
+    if (data.company) message += `*Company:* ${data.company}\n`;
+    message += `\n*Enquiry Type:* ${enquiryType.toUpperCase()}\n`;
+    
+    if (enquiryType === "product") {
+      message += `*Product:* ${data.product}\n`;
+      message += `*Quantity:* ${data.quantity}\n`;
+    } else if (enquiryType === "quote") {
+      if (data.product) message += `*Product:* ${data.product}\n`;
+      if (data.quantity) message += `*Quantity:* ${data.quantity}\n`;
+      if (data.deliveryLocation) message += `*Location:* ${data.deliveryLocation}\n`;
+    } else if (enquiryType === "custom") {
+      message += `*Looking For:* ${data.lookingFor}\n`;
+      if (data.quantity) message += `*Quantity:* ${data.quantity}\n`;
+    }
+    
+    if (data.additionalInfo) {
+      message += `*Additional Info:* ${data.additionalInfo}\n`;
+    }
+    
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${contactData.whatsapp}?text=${encodedMessage}`;
+
+    // Process and redirect
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-    }, 1500);
+      window.open(whatsappUrl, '_blank');
+    }, 800);
   };
 
   if (isSuccess) {
