@@ -63,7 +63,7 @@ export const DynamicContactForm = ({ enquiryType }: DynamicContactFormProps) => 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const { register, handleSubmit, formState: { errors }, trigger } = useForm<CombinedFormData>({
+  const { register, handleSubmit, formState: { errors }, trigger, setValue, watch } = useForm<CombinedFormData>({
     resolver: zodResolver(formSchemas[enquiryType] as any) as any,
     mode: "onBlur"
   });
@@ -191,14 +191,22 @@ export const DynamicContactForm = ({ enquiryType }: DynamicContactFormProps) => 
             >
               {enquiryType === "product" && (
                 <>
-                  <ProductSearch />
+                  <ProductSearch 
+                    value={watch("productCategory")}
+                    onChange={(val) => setValue("productCategory", val, { shouldValidate: true })}
+                    error={errors.productCategory?.message as string}
+                  />
                   <EditorialInput label="Specific Product Name" {...register("product")} error={errors.product?.message as string} />
                   <EditorialInput label="Required Quantity" {...register("quantity")} error={errors.quantity?.message as string} />
                 </>
               )}
               {enquiryType === "quote" && (
                 <>
-                  <ProductSearch />
+                  <ProductSearch 
+                    value={watch("productCategory")}
+                    onChange={(val) => setValue("productCategory", val, { shouldValidate: true })}
+                    error={errors.productCategory?.message as string}
+                  />
                   <div className="grid grid-cols-2 gap-6">
                     <EditorialInput label="Quantity" {...register("quantity")} error={errors.quantity?.message as string} />
                     <EditorialInput label="Delivery Location" {...register("deliveryLocation")} error={errors.deliveryLocation?.message as string} />
