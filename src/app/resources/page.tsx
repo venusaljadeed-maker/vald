@@ -104,7 +104,7 @@ export default function ResourcesPage() {
               {
                 title: "Packing Materials",
                 image: "/images/packing-materials.jpg",
-                items: ["Clear, Brown & Duct Tapes", "Masking & Warning Tapes", "Stretch Film & Bubble Rolls", "Sealant Tape & Rubber Sheets", "Corrugated Rolls"]
+                items: ["Clear, Brown & Duct Tapes", "Masking & Warning Tapes", "Stretch Film & Bubble Rolls", "Sealant Tape & Rubber Sheets", "Corrugated Rolls", "Carton Boxes"]
               }
             ].map((category, idx) => (
               <div key={idx} className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center group">
