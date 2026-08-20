@@ -43,15 +43,15 @@ export const Footer = () => {
             <ul className="space-y-4 text-sm text-vald-text-grey">
               <li className="flex gap-3">
                 <span className="text-vald-gold mt-0.5">📍</span>
-                <span>Dubai, UAE</span>
+                <span>Dubai</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-vald-gold mt-0.5"><Phone className="w-4 h-4" /></span>
-                <a href="tel:+971552555517" className="hover:text-white transition-colors">+971 55 255 5517</a>
+                <a href="tel:+971507056995" className="hover:text-white transition-colors">+971 50 705 6995</a>
               </li>
               <li className="flex gap-3">
                 <span className="text-vald-gold mt-0.5"><Mail className="w-4 h-4" /></span>
-                <a href="mailto:info@vald.com" className="hover:text-white transition-colors">info@vald.com</a>
+                <a href="mailto:info@venus-aljadeed.com" className="hover:text-white transition-colors">info@venus-aljadeed.com</a>
               </li>
               <li className="flex gap-3">
                 <span className="text-vald-gold mt-0.5">🕒</span>

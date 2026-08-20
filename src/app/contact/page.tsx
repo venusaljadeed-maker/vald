@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { EnquiryType, EnquirySelector } from "@/components/contact/EnquirySelector";
 import { DynamicContactForm } from "@/components/contact/DynamicContactForm";
 import { ContactMethods } from "@/components/contact/ContactMethods";
+import { contactData } from "@/lib/contact";
 import { LocationCard } from "@/components/contact/LocationCard";
 
 export default function ContactPage() {
@@ -78,7 +79,7 @@ export default function ContactPage() {
           Need an immediate response?
         </span>
         <a 
-          href={`https://wa.me/971552555517`}
+          href={`https://wa.me/${contactData.whatsapp}`}
           className="bg-vald-gold text-white text-xs font-bold px-4 py-2 rounded uppercase tracking-wider shadow hover:bg-yellow-600 transition-colors"
         >
           WhatsApp VALD
