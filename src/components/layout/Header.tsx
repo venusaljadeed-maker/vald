@@ -62,12 +62,12 @@ export const Header = () => {
           ))}
         </nav>
 
-        {/* Right Actions */}
         <div className="flex items-center gap-4">
-          <Link href="/contact">
-            <Button variant="dark" className="hidden sm:flex">
-              GET A QUOTE
-            </Button>
+          <Link 
+            href="/contact" 
+            className="hidden sm:flex bg-vald-dark-navy text-vald-white hover:bg-black px-6 py-3 text-sm inline-flex items-center justify-center font-sans font-semibold transition-all duration-300 ease-out uppercase tracking-wide"
+          >
+            GET A QUOTE
           </Link>
           <button className="xl:hidden w-10 h-10 border border-vald-soft-grey rounded-full flex items-center justify-center text-vald-deep-navy hover:bg-vald-soft-grey transition-colors">
             <Menu className="w-5 h-5" />
