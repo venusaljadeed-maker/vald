@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { UtilityBar } from "@/components/layout/UtilityBar";
 import { MobileStickyCTA } from "@/components/layout/MobileStickyCTA";
+import { Preloader } from "@/components/layout/Preloader";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -62,7 +63,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${clashDisplay.variable} font-sans antialiased text-vald-deep-navy bg-vald-off-white selection:bg-vald-gold selection:text-vald-dark-navy pb-16 sm:pb-0`}>
-        <UtilityBar />
+        <Preloader />
         <Header />
         <main>{children}</main>
         <Footer />

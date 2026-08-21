@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
@@ -12,9 +13,6 @@ import { contactData } from "@/lib/contact";
 const NAV_LINKS = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Products", href: "/resources" }, // Redirecting to resources as it holds products
-  { name: "Industries", href: "/#industries" },
-  { name: "Brands", href: "/#brands" },
   { name: "Resources", href: "/resources" },
   { name: "Contact Us", href: "/contact" },
 ];
@@ -22,10 +20,16 @@ const NAV_LINKS = [
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  
+  const isHome = pathname === "/";
+  // The header should be hidden if we are on the home page, at the top, and the menu isn't open.
+  const isHiddenOnHome = isHome && !isScrolled && !isMenuOpen;
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      // Show navbar after scrolling past a threshold (e.g., 50px or 100vh depending on preference)
+      setIsScrolled(window.scrollY > 100);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -47,10 +51,10 @@ export const Header = () => {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out bg-white",
-          isScrolled || isMenuOpen
-            ? "shadow-sm py-4"
-            : "py-6 border-b border-vald-soft-grey/30"
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
+          isHiddenOnHome
+            ? "-translate-y-full opacity-0 pointer-events-none"
+            : "translate-y-0 opacity-100 bg-white shadow-md py-3"
         )}
       >
         <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
@@ -61,7 +65,7 @@ export const Header = () => {
               alt="VALD" 
               width={220} 
               height={70} 
-              className="h-10 md:h-14 w-auto object-contain"
+              className="h-8 md:h-10 w-auto object-contain transition-all duration-300"
               priority
             />
           </Link>
@@ -72,7 +76,7 @@ export const Header = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-xs font-semibold text-vald-deep-navy hover:text-vald-gold transition-colors flex items-center gap-1 uppercase tracking-widest relative group"
+                className="text-xs font-semibold hover:text-vald-gold transition-colors flex items-center gap-1 uppercase tracking-widest relative group text-vald-deep-navy"
               >
                 {link.name}
                 {/* Hover underline */}
@@ -84,12 +88,12 @@ export const Header = () => {
           <div className="flex items-center gap-4 relative z-[60]">
             <Link 
               href="/contact" 
-              className="hidden sm:flex bg-vald-dark-navy text-vald-white hover:bg-black px-6 py-3 text-sm inline-flex items-center justify-center font-sans font-semibold transition-all duration-300 ease-out uppercase tracking-wide"
+              className="hidden sm:flex px-5 py-2.5 text-xs inline-flex items-center justify-center font-sans font-semibold transition-all duration-300 ease-out uppercase tracking-wide bg-vald-dark-navy text-vald-white hover:bg-black"
             >
               GET A QUOTE
             </Link>
             <button 
-              className="xl:hidden w-10 h-10 border border-vald-soft-grey rounded-full flex items-center justify-center text-vald-deep-navy hover:bg-vald-soft-grey transition-colors bg-white"
+              className="xl:hidden w-10 h-10 border rounded-full flex items-center justify-center transition-colors border-vald-soft-grey text-vald-deep-navy hover:bg-vald-soft-grey bg-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
