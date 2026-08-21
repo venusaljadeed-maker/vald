@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import { FinalCTA } from "@/components/quote/FinalCTA";
+
+export const metadata: Metadata = {
+  title: "Products & Resources | Industrial Hardware Catalog",
+  description: "Explore the comprehensive VALD product catalog. Sourcing premium lifting equipment, safety gear, welding machines, and tools in Dubai.",
+};
 
 export default function ResourcesPage() {
   return (

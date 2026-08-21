@@ -18,7 +18,7 @@ export const EditorialInput = React.forwardRef<
         <textarea
           ref={ref as React.Ref<HTMLTextAreaElement>}
           className={cn(
-            "block w-full bg-transparent border-0 border-b border-vald-soft-grey/40 py-4 px-0 text-vald-deep-navy focus:ring-0 focus:border-vald-gold transition-colors duration-300 peer resize-none",
+            "block w-full min-h-[48px] bg-transparent border-0 border-b border-vald-soft-grey/40 py-4 px-0 text-vald-deep-navy focus:ring-0 focus:border-vald-gold transition-colors duration-300 peer resize-none",
             "placeholder-transparent",
             className
           )}
@@ -29,7 +29,7 @@ export const EditorialInput = React.forwardRef<
         <input
           ref={ref as React.Ref<HTMLInputElement>}
           className={cn(
-            "block w-full bg-transparent border-0 border-b border-vald-soft-grey/40 py-4 px-0 text-vald-deep-navy focus:ring-0 focus:border-vald-gold transition-colors duration-300 peer",
+            "block w-full min-h-[48px] bg-transparent border-0 border-b border-vald-soft-grey/40 py-4 px-0 text-vald-deep-navy focus:ring-0 focus:border-vald-gold transition-colors duration-300 peer",
             "placeholder-transparent",
             className
           )}

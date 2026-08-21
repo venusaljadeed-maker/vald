@@ -283,90 +283,67 @@ export const ValdStandard = () => {
             </div>
           </div>
           
-          {/* MOBILE (Horizontal Slider) */}
-          <div className="lg:hidden w-full mt-16 pb-12">
-            <div className="flex items-center justify-between mb-8">
+          {/* MOBILE (Horizontal Slider with Swipe) */}
+          <div className="lg:hidden w-full mt-12 pb-6">
+            <div className="flex items-center justify-between mb-6 px-2">
               <div className="text-[10px] font-bold tracking-[0.2em] text-vald-text-grey">
-                0{activeIndex + 1} / 04
-              </div>
-              <div className="flex gap-2">
-                <button 
-                  onClick={() => {
-                    setIsHovering(true);
-                    setActiveIndex((prev) => (prev - 1 + 4) % 4);
-                  }}
-                  className="w-10 h-10 border border-vald-deep-navy/10 flex items-center justify-center text-vald-deep-navy"
-                >
-                  <ArrowRight className="w-4 h-4 rotate-180" />
-                </button>
-                <button 
-                  onClick={() => {
-                    setIsHovering(true);
-                    setActiveIndex((prev) => (prev + 1) % 4);
-                  }}
-                  className="w-10 h-10 bg-vald-deep-navy flex items-center justify-center text-white"
-                >
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                THE VALD STANDARD
               </div>
             </div>
 
-            <div className="relative h-[380px] overflow-hidden" 
-                 onMouseEnter={() => setIsHovering(true)}
-                 onMouseLeave={() => setIsHovering(false)}
-                 onTouchStart={() => setIsHovering(true)}
-                 onTouchEnd={() => setIsHovering(false)}
+            <div 
+              className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 pb-4 -mx-6 px-6"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeIndex}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-vald-deep-navy p-8 flex flex-col justify-center"
-                >
-                  {/* Background Image */}
-                  <img 
-                    src={PRINCIPLES[activeIndex].bgImage} 
-                    alt={PRINCIPLES[activeIndex].title}
-                    className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20 grayscale pointer-events-none"
-                  />
-                  
-                  <div className="relative z-20">
-                    <div className="mb-8 relative w-12 h-12 flex items-center justify-center">
-                      <div className="absolute inset-0 rounded-full border border-vald-gold/80" />
-                      <div className="absolute w-2 h-2 bg-vald-gold rounded-full top-0 right-0" />
-                      <div className="text-white">
-                        {(() => {
-                          const Icon = PRINCIPLES[activeIndex].icon;
-                          return <Icon active={true} />;
-                        })()}
+              {PRINCIPLES.map((principle, index) => {
+                const Icon = principle.icon;
+                return (
+                  <div
+                    key={principle.id}
+                    className="relative bg-vald-deep-navy p-8 flex flex-col justify-center rounded-xl overflow-hidden h-[380px] w-[85vw] flex-shrink-0 snap-center"
+                  >
+                    {/* Background Image */}
+                    <img 
+                      src={principle.bgImage} 
+                      alt={principle.title}
+                      className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20 grayscale pointer-events-none"
+                    />
+                    
+                    <div className="relative z-20">
+                      <div className="text-vald-gold font-mono text-xs tracking-widest mb-6 block">
+                        0{index + 1} / 04
+                      </div>
+
+                      <div className="mb-6 relative w-12 h-12 flex items-center justify-center">
+                        <div className="absolute inset-0 rounded-full border border-vald-gold/80" />
+                        <div className="absolute w-2 h-2 bg-vald-gold rounded-full top-0 right-0" />
+                        <div className="text-white">
+                          <Icon active={true} />
+                        </div>
+                      </div>
+
+                      <h3 className="font-sans text-[16px] font-bold uppercase tracking-widest text-white mb-4">
+                        {principle.title}
+                      </h3>
+                      
+                      <div className="h-[2px] w-12 bg-vald-gold mb-6" />
+
+                      <p className="text-[15px] font-sans leading-[1.6] text-gray-300">
+                        {principle.description}
+                        <span className="block mt-1 font-semibold text-white">
+                          {principle.descriptionHover}
+                        </span>
+                      </p>
+
+                      <div className="mt-8 flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-vald-gold">
+                        EXPLORE <ArrowRight className="w-4 h-4" />
                       </div>
                     </div>
-
-                    <h3 className="font-sans text-[16px] font-bold uppercase tracking-widest text-white mb-4">
-                      {PRINCIPLES[activeIndex].title}
-                    </h3>
-                    
-                    <div className="h-[2px] w-12 bg-vald-gold mb-6" />
-
-                    <p className="text-[15px] font-sans leading-[1.6] text-gray-300">
-                      {PRINCIPLES[activeIndex].description}
-                      <span className="block mt-1 font-semibold text-white">
-                        {PRINCIPLES[activeIndex].descriptionHover}
-                      </span>
-                    </p>
-
-                    <div className="mt-8 flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-vald-gold">
-                      EXPLORE <ArrowRight className="w-4 h-4" />
-                    </div>
                   </div>
-                </motion.div>
-              </AnimatePresence>
+                );
+              })}
             </div>
           </div>
-
         </div>
       </div>
     </section>

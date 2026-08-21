@@ -207,7 +207,7 @@ export const DynamicContactForm = ({ enquiryType }: DynamicContactFormProps) => 
                     onChange={(val) => setValue("productCategory", val, { shouldValidate: true })}
                     error={errors.productCategory?.message as string}
                   />
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <EditorialInput label="Quantity" {...register("quantity")} error={errors.quantity?.message as string} />
                     <EditorialInput label="Delivery Location" {...register("deliveryLocation")} error={errors.deliveryLocation?.message as string} />
                   </div>
@@ -231,12 +231,12 @@ export const DynamicContactForm = ({ enquiryType }: DynamicContactFormProps) => 
               transition={{ duration: 0.3 }}
               className="space-y-6"
             >
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <EditorialInput label="First Name *" {...register("firstName")} error={errors.firstName?.message as string} />
                 <EditorialInput label="Last Name *" {...register("lastName")} error={errors.lastName?.message as string} />
               </div>
               <EditorialInput label="Email Address *" type="email" {...register("email")} error={errors.email?.message as string} />
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <EditorialInput label="Phone Number *" type="tel" {...register("phone")} error={errors.phone?.message as string} />
                 <EditorialInput label="Company Name" {...register("company")} />
               </div>

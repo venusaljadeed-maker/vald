@@ -60,7 +60,7 @@ export const ProductSearch = ({ value, onChange, error }: ProductSearchProps) =>
       
       <div 
         className={cn(
-          "flex items-center justify-between w-full border-b py-3 cursor-pointer transition-colors duration-300",
+          "flex items-center justify-between w-full min-h-[48px] border-b py-3 cursor-pointer transition-colors duration-300",
           error ? "border-red-500" : isOpen ? "border-vald-gold" : "border-vald-soft-grey/40 hover:border-vald-gold/50"
         )}
         onClick={() => setIsOpen(!isOpen)}

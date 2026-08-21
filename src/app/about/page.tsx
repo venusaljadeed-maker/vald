@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import { RequirementProcess } from "@/components/process/RequirementProcess";
+
+export const metadata: Metadata = {
+  title: "About Us | Industrial Hardware Supplier Dubai",
+  description: "Learn more about VALD, a premier international industrial supply brand dedicated to bridging the gap between rigorous industrial requirements and flawless execution.",
+};
 
 export default function AboutPage() {
   return (
