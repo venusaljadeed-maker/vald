@@ -98,7 +98,7 @@ export default function ResourcesPage() {
                 items: ["Sigma Air Compressors", "Battery Chargers & Boosters", "Bottle & Trolley Jacks", "Hydraulic Car Lifts", "Paint Brushes & Rollers", "Spray Guns & Chisels", "Extension Poles & Paint Trays"]
               },
               {
-                title: "Wooden Blocks",
+                title: "Wooden Materials",
                 image: "/images/building-materials.jpg",
                 items: ["Industrial Plywood Sheets", "Solid Wooden Beams", "Structural Timber", "Marine Grade Plywood", "Formwork Plywood", "MDF & Particle Boards"]
               },
