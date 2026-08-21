@@ -29,11 +29,23 @@ export default function AboutPage() {
           <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-6 font-light">
             Venus Al Jadeed Wholesale Trading LLC is a dynamic, independent trading enterprise based in Dubai, UAE, specializing in high-grade building materials, hardware, and structural supplies.
           </p>
-          <p className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-light">
-            While the company is an independent business owned and operated in Dubai, its foundation is deeply inspired by a rich personal legacy. The company name pays homage to Venus Enterprises—a respected timber business established in India by my grandfather, K.P. Mustafa Haji. Guided by the timeless principles of integrity, quality, and hard work passed down through generations, Venus Al Jadeed bridges classic business values with modern trading efficiency.
-          </p>
         </div>
       </div>
+
+      {/* Heritage Section */}
+      <section className="py-24 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-6 lg:px-12 max-w-5xl text-center">
+          <span className="text-vald-gold font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Our Heritage</span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-vald-deep-navy mb-8">How the Name was Formed</h2>
+          <div className="relative">
+            <span className="absolute -top-10 -left-4 md:-left-8 text-8xl text-gray-100 font-serif z-0">"</span>
+            <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-4xl mx-auto relative z-10 font-light">
+              While the company is an independent business owned and operated in Dubai, its foundation is deeply inspired by a rich personal legacy. The company name pays homage to <strong className="text-vald-deep-navy font-semibold">Venus Enterprises</strong>—a respected timber business established in India by my grandfather, <strong className="text-vald-deep-navy font-semibold">K.P. Mustafa Haji</strong>. Guided by the timeless principles of integrity, quality, and hard work passed down through generations, Venus Al Jadeed bridges classic business values with modern trading efficiency.
+            </p>
+            <span className="absolute -bottom-16 -right-4 md:-right-8 text-8xl text-gray-100 font-serif z-0 rotate-180">"</span>
+          </div>
+        </div>
+      </section>
 
       {/* Global Reach Section */}
       <section className="py-24 bg-white border-b border-gray-100">
