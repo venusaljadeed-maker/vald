@@ -4,14 +4,14 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 const BRANDS = [
-  { name: "DEWALT", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e4/DeWalt_Logo.svg" },
-  { name: "BOSCH", logo: "https://upload.wikimedia.org/wikipedia/commons/1/16/Bosch-logo.svg" },
-  { name: "Makita", logo: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Makita_logo.svg" },
-  { name: "STANLEY", logo: "https://upload.wikimedia.org/wikipedia/commons/4/43/Stanley_Tools_logo.svg" },
-  { name: "3M", logo: "https://upload.wikimedia.org/wikipedia/commons/1/15/3M_wordmark.svg" },
-  { name: "WURTH", logo: "https://upload.wikimedia.org/wikipedia/commons/3/30/W%C3%BCrth_logo.svg" },
-  { name: "ESAB", logo: "https://upload.wikimedia.org/wikipedia/commons/1/13/ESAB_logo.svg" },
-  { name: "LINCOLN ELECTRIC", logo: "https://upload.wikimedia.org/wikipedia/en/2/23/Lincoln_Electric_logo.svg" }
+  { name: "DEWALT", logo: "https://cdn.worldvectorlogo.com/logos/dewalt-1.svg" },
+  { name: "BOSCH", logo: "https://cdn.worldvectorlogo.com/logos/bosch.svg" },
+  { name: "Makita", logo: "https://cdn.worldvectorlogo.com/logos/makita-1.svg" },
+  { name: "STANLEY", logo: "https://cdn.worldvectorlogo.com/logos/stanley.svg" },
+  { name: "3M", logo: "https://cdn.worldvectorlogo.com/logos/3m-1.svg" },
+  { name: "WURTH", logo: "https://logo.clearbit.com/wurth.com" },
+  { name: "ESAB", logo: "https://cdn.worldvectorlogo.com/logos/esab.svg" },
+  { name: "LINCOLN ELECTRIC", logo: "https://cdn.worldvectorlogo.com/logos/lincoln-electric.svg" }
 ];
 
 export const BrandStrip = () => {
