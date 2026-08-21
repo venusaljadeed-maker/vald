@@ -63,15 +63,15 @@ export default function AboutPage() {
               { title: "African Markets", desc: "Dependable sourcing, packaging, and shipping of hardware and construction materials for expanding infrastructure projects across the continent." },
               { title: "International Exports", desc: "Flexible, fully compliant international shipping, documentation, and trade logistics to meet global demand." }
             ].map((market, i) => (
-              <div key={i} className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 bg-vald-gold/10 text-vald-gold rounded-full flex items-center justify-center mb-6">
+              <div key={i} className="group bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-2 hover:bg-white transition-all duration-300 cursor-default">
+                <div className="w-12 h-12 bg-vald-gold/10 text-vald-gold rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-vald-gold group-hover:text-white transition-all duration-300">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="2" y1="12" x2="22" y2="12"></line>
                     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-vald-deep-navy mb-3">{market.title}</h3>
+                <h3 className="text-xl font-bold text-vald-deep-navy mb-3 group-hover:text-vald-gold transition-colors">{market.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">{market.desc}</p>
               </div>
             ))}
@@ -90,19 +90,19 @@ export default function AboutPage() {
                 Our identity and daily operations are driven by four core pillars that form our brand identity, VALD:
               </p>
               
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {[
                   { l: "V", title: "Value", desc: "Delivering top-tier construction and hardware products at competitive, market-leading wholesale prices." },
                   { l: "A", title: "Authenticity", desc: "Ensuring 100% genuine sourcing, transparent trade terms, and straightforward business dealings." },
                   { l: "L", title: "Logistics", desc: "Operating a streamlined supply chain to guarantee prompt delivery to your job sites or designated ports." },
                   { l: "D", title: "Dependability", desc: "Serving as a reliable, long-term supply partner for contractors, builders, and regional distributors." }
                 ].map((val, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="w-12 h-12 flex-shrink-0 bg-vald-deep-navy text-vald-gold font-display font-bold text-2xl rounded flex items-center justify-center">
+                  <div key={i} className="group flex gap-4 p-4 -mx-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300">
+                    <div className="w-12 h-12 flex-shrink-0 bg-vald-deep-navy text-vald-gold font-display font-bold text-2xl rounded flex items-center justify-center group-hover:bg-vald-gold group-hover:text-white transition-colors duration-300">
                       {val.l}
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-vald-deep-navy mb-1">— {val.title}</h4>
+                      <h4 className="text-lg font-bold text-vald-deep-navy mb-1 group-hover:text-vald-gold transition-colors">— {val.title}</h4>
                       <p className="text-gray-600 text-sm leading-relaxed">{val.desc}</p>
                     </div>
                   </div>
@@ -110,9 +110,9 @@ export default function AboutPage() {
               </div>
             </div>
             
-            <div className="relative h-full min-h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-vald-deep-navy/20 z-10"></div>
-              <img src="/images/building-materials.jpg" alt="Core Values" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="relative h-full min-h-[500px] rounded-2xl overflow-hidden shadow-2xl group">
+              <div className="absolute inset-0 bg-vald-deep-navy/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+              <img src="/images/vald-staff-planning.jpg" alt="Core Values" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
             </div>
           </div>
         </div>
@@ -130,15 +130,15 @@ export default function AboutPage() {
               { title: "Uncompromising Quality", desc: "Sourced strictly from verified and certified manufacturers." },
               { title: "On-Time Delivery", desc: "Streamlined logistics designed to keep your construction projects moving without delay." }
             ].map((reason, i) => (
-              <div key={i} className="flex gap-4 p-6 bg-gray-50 rounded-xl border border-gray-100">
-                <div className="mt-1 w-6 h-6 flex-shrink-0 text-vald-gold">
+              <div key={i} className="group flex gap-4 p-6 bg-gray-50 rounded-xl border border-gray-100 hover:bg-[#0b1424] hover:border-[#0b1424] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default">
+                <div className="mt-1 w-6 h-6 flex-shrink-0 text-vald-gold group-hover:scale-125 transition-transform duration-300">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-vald-deep-navy mb-2">{reason.title}</h4>
-                  <p className="text-gray-600 text-sm">{reason.desc}</p>
+                  <h4 className="text-lg font-bold text-vald-deep-navy mb-2 group-hover:text-white transition-colors">{reason.title}</h4>
+                  <p className="text-gray-600 text-sm group-hover:text-gray-300 transition-colors">{reason.desc}</p>
                 </div>
               </div>
             ))}
