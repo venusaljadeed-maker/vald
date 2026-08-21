@@ -9,7 +9,7 @@ const BRANDS = [
   { name: "Makita", logo: "https://cdn.worldvectorlogo.com/logos/makita-1.svg" },
   { name: "STANLEY", logo: "https://cdn.worldvectorlogo.com/logos/stanley.svg" },
   { name: "3M", logo: "https://upload.wikimedia.org/wikipedia/commons/1/15/3M_wordmark.svg" },
-  { name: "WURTH", logo: "https://logo.clearbit.com/wurth.com" },
+  { name: "WURTH", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7e/W%C3%BCrth_logo.svg" },
   { name: "ESAB", logo: "https://cdn.worldvectorlogo.com/logos/esab.svg" },
   { name: "LINCOLN ELECTRIC", logo: "https://cdn.worldvectorlogo.com/logos/lincoln-electric.svg" }
 ];
