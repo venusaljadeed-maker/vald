@@ -53,8 +53,8 @@ export default function AboutPage() {
           <div className="group relative w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
             <div className="absolute inset-0 bg-vald-deep-navy/10 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
             <img 
-              src="/images/vald-dubai-warehouse.jpg" 
-              alt="VALD Headquarters in Dubai" 
+              src="/images/vald-dubai-office.jpg" 
+              alt="VALD Minimal Trading Office in Dubai" 
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
             {/* Subtle Overlay Label */}
