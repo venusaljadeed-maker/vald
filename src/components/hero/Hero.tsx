@@ -22,6 +22,19 @@ export const Hero = () => {
           </video>
         `}}
       />
+
+      {/* Dark Overlay for Text Legibility */}
+      <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none" />
+
+      {/* Hero Text Overlay */}
+      <div className="relative z-20 flex flex-col items-center justify-center text-center px-6 w-full max-w-5xl mx-auto mt-16 md:mt-0">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 drop-shadow-xl tracking-tight">
+          Uncompromising Quality for <br className="hidden md:block" /> Industrial Excellence.
+        </h1>
+        <p className="text-lg md:text-2xl text-gray-200 font-light max-w-2xl mx-auto drop-shadow-lg">
+          "Bridging the gap between rigorous industrial requirements and flawless execution."
+        </p>
+      </div>
     </section>
   );
 };
