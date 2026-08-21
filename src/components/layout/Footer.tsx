@@ -43,7 +43,7 @@ export const Footer = () => {
             <ul className="space-y-4 text-sm text-vald-text-grey">
               <li className="flex gap-3">
                 <span className="text-vald-gold mt-0.5">📍</span>
-                <span>Dubai</span>
+                <span>Dubai, UAE</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-vald-gold mt-0.5"><Phone className="w-4 h-4" /></span>
