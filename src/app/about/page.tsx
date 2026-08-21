@@ -47,25 +47,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Headquarters Image Section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
-          <div className="group relative w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-vald-deep-navy/10 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
-            <img 
-              src="/images/vald-dubai-office.jpg" 
-              alt="VALD Minimal Trading Office in Dubai" 
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-            />
-            {/* Subtle Overlay Label */}
-            <div className="absolute bottom-8 left-8 z-20 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-lg shadow-lg translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-              <span className="text-vald-gold font-bold tracking-wider text-xs uppercase block mb-1">Global Headquarters</span>
-              <span className="text-vald-deep-navy font-display font-bold text-lg">Dubai, United Arab Emirates</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Global Reach Section */}
       <section className="py-24 bg-white border-b border-gray-100">
         <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
