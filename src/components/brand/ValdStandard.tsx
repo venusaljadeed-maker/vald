@@ -1,8 +1,7 @@
-"use client";
-
-import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ValdStandardGrid } from "./ValdStandardInteractive";
 
 // --- CUSTOM SVG ICONS ---
 const QualityIcon = ({ active }: { active: boolean }) => (
@@ -73,20 +72,6 @@ const PRINCIPLES = [
 ];
 
 export const ValdStandard = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
-
-  // Auto-cycle logic
-  useEffect(() => {
-    if (isHovering) return;
-
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % 4);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [isHovering]);
-
   return (
     <section className="relative py-24 bg-[#FDFDFD] overflow-hidden">
       {/* Background Watermark */}
@@ -102,12 +87,7 @@ export const ValdStandard = () => {
           
           {/* LEFT: 42% */}
           <div className="w-full lg:w-[42%] flex flex-col pt-12 pr-12 lg:pr-24">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div>
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-8 h-[1px] bg-vald-gold"></div>
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-vald-deep-navy">THE VALD STANDARD</span>
@@ -124,166 +104,13 @@ export const ValdStandard = () => {
               <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-vald-deep-navy">
                 EXPLORE OUR STANDARD <ArrowRight className="w-4 h-4 text-vald-gold" />
               </div>
-            </motion.div>
-          </div>
-
-          {/* RIGHT: 58% (Grid Layout) */}
-          <div className="hidden lg:flex w-full lg:w-[58%] relative min-h-[500px]">
-            {/* The 2x2 Grid Lines Container */}
-            <div className="absolute inset-0 border border-vald-deep-navy/10 flex flex-col">
-              <div className="flex-1 flex border-b border-vald-deep-navy/10">
-                <div className="flex-1 border-r border-vald-deep-navy/10"></div>
-                <div className="flex-1"></div>
-              </div>
-              <div className="flex-1 flex">
-                <div className="flex-1 border-r border-vald-deep-navy/10"></div>
-                <div className="flex-1"></div>
-              </div>
-            </div>
-
-            {/* Central "VALD." Marker */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#FDFDFD] flex items-center justify-center z-20">
-              <span className="font-display font-bold text-sm text-vald-deep-navy tracking-widest flex items-center">
-                VALD<span className="text-vald-gold">.</span>
-              </span>
-            </div>
-
-            {/* Connection Highlight Lines (Dynamic) */}
-            <div className="absolute inset-0 z-10 pointer-events-none">
-              <AnimatePresence>
-                {activeIndex === 0 && (
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute top-[25%] left-1/2 w-[1px] h-[25%] bg-vald-gold origin-bottom shadow-[0_0_8px_rgba(241,177,17,0.5)]" />
-                )}
-                {activeIndex === 1 && (
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute top-1/2 left-[75%] w-[25%] h-[1px] bg-vald-gold origin-left shadow-[0_0_8px_rgba(241,177,17,0.5)]" />
-                )}
-                {activeIndex === 2 && (
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute top-[50%] left-[25%] w-[25%] h-[1px] bg-vald-gold origin-right shadow-[0_0_8px_rgba(241,177,17,0.5)]" />
-                )}
-                {activeIndex === 3 && (
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute top-[50%] left-1/2 w-[1px] h-[25%] bg-vald-gold origin-top shadow-[0_0_8px_rgba(241,177,17,0.5)]" />
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Grid Modules */}
-            <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 z-10">
-              {PRINCIPLES.map((principle) => {
-                const isActive = activeIndex === principle.index;
-                return (
-                  <div 
-                    key={principle.id}
-                    className={`relative p-12 flex flex-col justify-center cursor-pointer group ${isActive ? 'z-30' : ''}`}
-                    onMouseEnter={() => {
-                      setIsHovering(true);
-                      setActiveIndex(principle.index);
-                    }}
-                    onMouseLeave={() => setIsHovering(false)}
-                  >
-                    {/* Active State Background & Image */}
-                    <AnimatePresence>
-                      {isActive && (
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.4 }}
-                          className="absolute inset-[1px] bg-vald-deep-navy overflow-hidden"
-                          style={{
-                            boxShadow: "0px 10px 30px rgba(10, 26, 47, 0.15)"
-                          }}
-                        >
-                          <img 
-                            src={principle.bgImage} 
-                            alt={principle.title}
-                            className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20 grayscale"
-                          />
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-
-                    {/* Content (Z-20 to sit above background) */}
-                    <motion.div 
-                      className="relative z-20"
-                      animate={{ y: isActive ? -4 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {/* Icon Container */}
-                      <div className="mb-6 relative w-10 h-10 flex items-center justify-center">
-                        <motion.div 
-                          className={`absolute inset-0 rounded-full border border-vald-gold/30`}
-                          animate={{ borderColor: isActive ? "rgba(241,177,17,0.8)" : "rgba(10, 26, 47, 0.1)" }}
-                        />
-                        {/* Orbiting dot */}
-                        <motion.div 
-                          className="absolute w-1.5 h-1.5 bg-vald-gold rounded-full"
-                          initial={{ top: -3, left: 18 }}
-                          animate={{ 
-                            rotate: isActive ? 180 : 0,
-                            transformOrigin: "2px 23px"
-                          }}
-                          transition={{ duration: 0.6, ease: "easeOut" }}
-                        />
-                        <div className={`text-${isActive ? 'white' : 'vald-deep-navy'}`}>
-                          <principle.icon active={isActive} />
-                        </div>
-                      </div>
-
-                      <h3 className={`font-sans text-[13px] font-bold uppercase tracking-widest mb-3 ${isActive ? 'text-white' : 'text-vald-deep-navy'}`}>
-                        {principle.title}
-                      </h3>
-                      
-                      <div className={`h-[2px] w-8 mb-4 ${isActive ? 'bg-vald-gold' : 'bg-transparent'}`} />
-
-                      <p className={`text-[14px] font-sans leading-[1.6] ${isActive ? 'text-gray-300' : 'text-vald-text-grey'}`}>
-                        {principle.description}
-                        <AnimatePresence>
-                          {isActive && (
-                            <motion.span
-                              initial={{ opacity: 0, display: 'none' }}
-                              animate={{ opacity: 1, display: 'block' }}
-                              exit={{ opacity: 0, display: 'none' }}
-                              className="mt-1 font-semibold text-white"
-                            >
-                              {principle.descriptionHover}
-                            </motion.span>
-                          )}
-                        </AnimatePresence>
-                      </p>
-
-                      <AnimatePresence>
-                        {isActive && (
-                          <motion.div 
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -10 }}
-                            className="mt-6 flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-vald-gold"
-                          >
-                            EXPLORE <motion.div animate={{ x: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}><ArrowRight className="w-3 h-3" /></motion.div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </motion.div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Standard Score Visual */}
-            <div className="absolute -bottom-16 left-0 w-full flex items-center justify-between text-[10px] font-bold tracking-[0.2em] text-vald-text-grey">
-              <span>THE VALD STANDARD</span>
-              <div className="flex gap-4">
-                {PRINCIPLES.map((p, i) => (
-                  <span key={p.id} className="flex items-center gap-4">
-                    <span className={activeIndex === i ? "text-vald-deep-navy" : ""}>{p.title}</span>
-                    {i < 3 && <span className="opacity-30">—</span>}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
+
+          {/* RIGHT: 58% (Grid Layout) - Client Component */}
+          <ValdStandardGrid />
           
-          {/* MOBILE (Horizontal Slider with Swipe) */}
+          {/* MOBILE (Horizontal Slider with Swipe) - Server Rendered Static HTML */}
           <div className="lg:hidden w-full mt-12 pb-6">
             <div className="flex items-center justify-between mb-6 px-2">
               <div className="text-[10px] font-bold tracking-[0.2em] text-vald-text-grey">
@@ -302,12 +129,16 @@ export const ValdStandard = () => {
                     key={principle.id}
                     className="relative bg-vald-deep-navy p-8 flex flex-col justify-center rounded-xl overflow-hidden h-[380px] w-[85vw] flex-shrink-0 snap-center"
                   >
-                    {/* Background Image */}
-                    <img 
-                      src={principle.bgImage} 
-                      alt={principle.title}
-                      className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20 grayscale pointer-events-none"
-                    />
+                    {/* Background Image Optimized with next/image */}
+                    <div className="absolute inset-0 z-0">
+                      <Image 
+                        src={principle.bgImage} 
+                        alt={principle.title}
+                        fill
+                        sizes="(max-width: 1024px) 85vw, 100vw"
+                        className="object-cover mix-blend-overlay opacity-20 grayscale pointer-events-none"
+                      />
+                    </div>
                     
                     <div className="relative z-20">
                       <div className="text-vald-gold font-mono text-xs tracking-widest mb-6 block">

@@ -1,7 +1,5 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
+import { ArrowRight, Download } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -12,9 +10,20 @@ export const Hero = () => {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full object-cover z-0 hidden md:block"
       >
         <source src="/videos/hero-desktop.mp4" type="video/mp4" />
+      </video>
+
+      {/* Full-width Mobile Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0 block md:hidden"
+      >
+        <source src="/videos/hero-mobile.mp4" type="video/mp4" />
       </video>
     </section>
   );
