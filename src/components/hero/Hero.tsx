@@ -29,10 +29,10 @@ export const Hero = () => {
       {/* Hero Text Overlay */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-6 w-full max-w-5xl mx-auto mt-16 md:mt-0">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 drop-shadow-xl tracking-tight">
-          Uncompromising <span className="text-vald-gold">Quality</span> for <br className="hidden md:block" /> Industrial <span className="text-vald-gold">Excellence.</span>
+          Uncompromising <span className="text-vald-gold">Quality</span> for <br className="hidden md:block" /> Building <span className="text-vald-gold">Excellence.</span>
         </h1>
         <p className="text-lg md:text-2xl text-gray-200 font-light max-w-2xl mx-auto drop-shadow-lg">
-          "Bridging the gap between rigorous industrial requirements and flawless execution."
+          "Bridging the gap between rigorous building requirements and flawless execution."
         </p>
       </div>
 
