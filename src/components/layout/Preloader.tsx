@@ -31,7 +31,7 @@ export const Preloader = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: [0.8, 1.1, 1], opacity: [0, 1, 1] }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="relative w-72 h-72 md:w-[500px] md:h-[500px]"
+            className="relative w-4/5 max-w-[280px] aspect-square md:max-w-none md:w-[500px] md:h-[500px]"
           >
             {/* 
               Using mix-blend-multiply will remove any solid white background 
