@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, ChevronDown } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -34,6 +34,12 @@ export const Hero = () => {
         <p className="text-lg md:text-2xl text-gray-200 font-light max-w-2xl mx-auto drop-shadow-lg">
           "Bridging the gap between rigorous industrial requirements and flawless execution."
         </p>
+      </div>
+
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center animate-bounce opacity-80 pointer-events-none">
+        <span className="text-white text-xs uppercase tracking-widest mb-1 font-medium">Scroll</span>
+        <ChevronDown className="text-white w-6 h-6" />
       </div>
     </section>
   );
