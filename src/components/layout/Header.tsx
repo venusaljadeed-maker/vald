@@ -94,7 +94,7 @@ export const Header = () => {
           <div className="flex items-center gap-4 relative z-[60]">
             <Link 
               href="/contact" 
-              className="hidden sm:flex px-5 py-2.5 text-xs inline-flex items-center justify-center font-sans font-semibold transition-all duration-300 ease-out uppercase tracking-wide bg-vald-dark-navy text-vald-white hover:bg-black"
+              className="hidden xl:inline-flex px-5 py-2.5 text-xs items-center justify-center font-sans font-semibold transition-all duration-300 ease-out uppercase tracking-wide bg-vald-dark-navy text-vald-white hover:bg-black"
             >
               GET A QUOTE
             </Link>
