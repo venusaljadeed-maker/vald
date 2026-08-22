@@ -76,9 +76,11 @@ export const ProductEcosystem = () => {
               key={category.id}
               delay={index * 0.05}
               margin="-50px"
+              className={category.colSpan}
+            >
               <Link
                 href="/resources"
-                className={`group cursor-pointer relative overflow-hidden rounded-xl bg-[#0b1424] min-h-[280px] flex flex-col justify-between p-8 block ${category.colSpan}`}
+                className="group cursor-pointer relative overflow-hidden rounded-xl bg-[#0b1424] min-h-[280px] flex flex-col justify-between p-8 block w-full h-full"
               >
                 {/* Image Background */}
                 <div className="absolute inset-0 z-0">
