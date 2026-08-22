@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Category {
@@ -65,9 +66,10 @@ export const ProductEcosystemMobile = ({ categories }: { categories: Category[] 
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {categories.map((category) => (
-          <div
+          <Link
+            href="/resources"
             key={category.id}
-            className="group relative overflow-hidden rounded-xl bg-[#0b1424] h-[400px] w-[85vw] flex-shrink-0 snap-center flex flex-col justify-between p-6"
+            className="group relative overflow-hidden rounded-xl bg-[#0b1424] h-[400px] w-[85vw] flex-shrink-0 snap-center flex flex-col justify-between p-6 block"
           >
             {/* Image Background Optimized */}
             <div className="absolute inset-0 z-0">
@@ -93,7 +95,7 @@ export const ProductEcosystemMobile = ({ categories }: { categories: Category[] 
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       
